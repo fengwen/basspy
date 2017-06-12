@@ -129,9 +129,7 @@ class BassFuncClass(object):
 					self.__printSqlFmtLog(r,dbname,onesql,startTime)					
 				else:
 					self.__writeLog("忽略执行第("+str(self.sqlSeqNo)+")个SQL语句:\n[SQL]\n"+onesql+"\n[/SQL]");	
-				
-				print "flag="+str(flag)
-				print "errorExit="+str(errorExit)
+
 				if flag<>0 and errorExit.find("continue") == -1:
 					break
 				if flag<>0 and errorExit.find("continue") <> -1:

@@ -7,6 +7,8 @@
 - 记录程序开始结束时间。记录每个sql返回日志包括。执行状态、时长、操作表、记录数、开始结束时间、错误原因等。
 
 # 使用方法
+## python lin
+要求安装pymysql组件
 ## 脚本样例
 ```
 # -*- coding: utf-8 -*-
@@ -76,7 +78,7 @@ execHiveSql(sql,dbname='default',queue="root.hadoop")
 如是tab键作为分隔符号，写成\\\t
 ### {errorcontinue}标签
 
-错误跳出执行。
+错误继续执行。
 ```
 INSERT overwrite TABLE game_user_trans2 partition(monthid = '{curMonth}')
 SELECT user_id
@@ -90,7 +92,7 @@ UNION
 SELECT user_id
 FROM game_user_cookie
 WHERE monthid = '{curMonth}';
---{errorbreak}
+--{errorcontinue}
 ```
 
 
